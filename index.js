@@ -1,13 +1,16 @@
 const express = require('express');
+const ejs = require("ejs")
 const path = require("path")
 const app = express();
 // Middlewares .. 
 app.use(express.urlencoded({ extended: false }));
 
-app.set("view engine ", "ejs")
-app.set("view engine",path.resolve("./view") )
+app.set("view engine", "ejs")
+app.set("view path",path.resolve("./views") )
+
 
 app.get("/", (req, res) => {
+
     res.render("home");
 
 })
